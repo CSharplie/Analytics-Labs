@@ -9,8 +9,8 @@ variable "db_password" {}
 terraform {
 	required_providers {
 	azurerm = {
-			source 					= "hashicorp/azurerm"
-			version 				= ">= 2.26"
+			source 						= "hashicorp/azurerm"
+			version 					= ">= 2.26"
 		}
 	}
 }
@@ -22,8 +22,8 @@ provider "azurerm" {
 data "azurerm_client_config" "current" {}
 
 resource "azurerm_resource_group" "rg" {
-	name		 					= "adf_hands_on_${var.environment}"
-	location 						= var.location
+	name		 						= "adf_hands_on_${var.environment}"
+	location 							= var.location
 }
 
 resource "azurerm_sql_server" "dbserver" {
@@ -40,6 +40,9 @@ resource "azurerm_sql_database" "db" {
 	resource_group_name 				= azurerm_resource_group.rg.name
 	location							= var.location
 	server_name				 			= azurerm_sql_server.dbserver.name
+	requested_service_objective_name 	= "Basic"
+	edition								= "Basic"
+	max_size_bytes						= 2147483648
 }
 
 resource "azurerm_sql_firewall_rule" "db_fw" {
