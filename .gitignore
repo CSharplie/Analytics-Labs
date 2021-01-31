@@ -1,4 +1,8 @@
+AzureDevops-ADF/.terraform/
 AzureDevops-ADF/.terraform.lock.hcl
-AzureDevops-ADF/.terraform/modules/modules.json
-AzureDevops-ADF/.terraform/providers/registry.terraform.io/hashicorp/azurerm/2.43.0/windows_amd64/terraform-provider-azurerm_v2.43.0_x5.exe
-AzureDevops-ADF/.terraform/providers/registry.terraform.io/hashicorp/http/2.0.0/windows_amd64/terraform-provider-http_v2.0.0_x5.exe
+AzureDevOps-ADF/terraform.tfstate
+AzureDevOps-ADF/.terraform.tfstate.lock.info
+AzureDevOps-ADF-Light/.terraform/
+AzureDevOps-ADF-Light/.terraform.lock.hcl
+AzureDevOps-ADF-Light/terraform.tfstate
+AzureDevOps-ADF-Light/.terraform.tfstate.lock.info

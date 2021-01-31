@@ -23,7 +23,6 @@ data "http" "myip" {
 
 module "acm_request_certificate_example" {
   source                            = "./resources"
-
   prefix                            = var.prefix
   db_username                       = var.db_username
   db_password                       = var.db_password
@@ -34,7 +33,6 @@ module "acm_request_certificate_example" {
 
 module "acm_request_certificate_other_example" {
   source                            = "./resources"
-
   prefix                            = var.prefix
   db_username                       = var.db_username
   db_password                       = var.db_password
