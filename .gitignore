@@ -1,10 +1,5 @@
-AzureDevops-ADF/.terraform/
-AzureDevops-ADF/.terraform.lock.hcl
-AzureDevOps-ADF/terraform.tfstate
-AzureDevOps-ADF/.terraform.tfstate.lock.info
-AzureDevOps-ADF/terraform.tfstate.backup
-AzureDevOps-ADF-Light/.terraform/
-AzureDevOps-ADF-Light/.terraform.lock.hcl
-AzureDevOps-ADF-Light/terraform.tfstate
-AzureDevOps-ADF-Light/.terraform.tfstate.lock.info
-AzureDevOps-ADF-Light/terraform.tfstate.backup
+*/.terraform/
+*/.terraform.lock.hcl
+*/terraform.tfstate
+*/.terraform.tfstate.lock.info
+*/terraform.tfstate.backup
