@@ -10,7 +10,7 @@ terraform {
   required_providers {
   azurerm = {
       source                          = "hashicorp/azurerm"
-      version                         = ">= 2.26"
+       version                        = "~> 2.47.0"
     }
   }
 }
@@ -25,7 +25,7 @@ resource "azurerm_resource_group" "rg" {
   name                                = "adf_hands_on_${var.environment}"
   location                            = var.location
 }
-
+/*
 resource "azurerm_sql_server" "dbserver" {
   name                                = "${var.prefix}-handson-sql-${var.environment}" 
   resource_group_name                 = azurerm_resource_group.rg.name
@@ -60,6 +60,7 @@ resource "azurerm_sql_firewall_rule" "db_fw_az" {
   start_ip_address                    = "0.0.0.0"
   end_ip_address                      = "0.0.0.0"
 }
+*/
 
 resource "azurerm_key_vault" "akv" {
   name                                = "${var.prefix}-handson-akv-${var.environment}"
@@ -70,4 +71,15 @@ resource "azurerm_key_vault" "akv" {
   soft_delete_retention_days          = 7
   purge_protection_enabled            = false
   sku_name                            = "standard"
+
+   access_policy {
+    tenant_id = data.azurerm_client_config.current.tenant_id
+    object_id = data.azurerm_client_config.current.object_id
+    secret_permissions = [
+      "get", 
+      "list",  
+      "set",
+      "delete"
+    ]
+  }
 }
