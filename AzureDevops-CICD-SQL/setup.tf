@@ -27,16 +27,6 @@ data "http" "myip" {
   url                 = "http://ipv4.icanhazip.com"
 }
 
-module "resources_dev" {
-  source              = "./resources"
-  prefix              = var.prefix
-  db_username         = var.db_username
-  db_password         = var.db_password
-  location            = var.location
-  ip                  = chomp(data.http.myip.body)
-  environment         = "dev"
-}
-
 module "resources_tst" {
   source              = "./resources"
   prefix              = var.prefix
@@ -45,4 +35,14 @@ module "resources_tst" {
   location            = var.location
   ip                  = chomp(data.http.myip.body)
   environment         = "tst"
+}
+
+module "resources_uat" {
+  source              = "./resources"
+  prefix              = var.prefix
+  db_username         = var.db_username
+  db_password         = var.db_password
+  location            = var.location
+  ip                  = chomp(data.http.myip.body)
+  environment         = "uat"
 }

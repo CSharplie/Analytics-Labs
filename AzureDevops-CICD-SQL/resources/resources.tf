@@ -25,7 +25,7 @@ resource "azurerm_resource_group" "rg" {
   name                                = "adf_hands_on_${var.environment}"
   location                            = var.location
 }
-/*
+
 resource "azurerm_sql_server" "dbserver" {
   name                                = "${var.prefix}-handson-sql-${var.environment}" 
   resource_group_name                 = azurerm_resource_group.rg.name
@@ -60,7 +60,6 @@ resource "azurerm_sql_firewall_rule" "db_fw_az" {
   start_ip_address                    = "0.0.0.0"
   end_ip_address                      = "0.0.0.0"
 }
-*/
 
 resource "azurerm_key_vault" "akv" {
   name                                = "${var.prefix}-handson-akv-${var.environment}"
