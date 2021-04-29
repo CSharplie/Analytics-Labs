@@ -27,7 +27,7 @@ data "http" "myip" {
   url               = "http://ipv4.icanhazip.com"
 }
 
-module "resources_dev" {
+module "resources_tst" {
   source            = "./resources"
   prefix            = var.prefix
   db_username       = var.db_username
@@ -37,7 +37,7 @@ module "resources_dev" {
   environment       = "tst"
 }
 
-module "resources_tst" {
+module "resources_uat" {
   source            = "./resources"
   prefix            = var.prefix
   db_username       = var.db_username
