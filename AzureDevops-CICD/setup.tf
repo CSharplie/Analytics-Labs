@@ -34,7 +34,7 @@ module "resources_dev" {
   db_password       = var.db_password
   location          = var.location
   ip                = chomp(data.http.myip.body)
-  environment       = "dev"
+  environment       = "tst"
 }
 
 module "resources_tst" {
@@ -44,5 +44,5 @@ module "resources_tst" {
   db_password       = var.db_password
   location          = var.location
   ip                = chomp(data.http.myip.body)
-  environment       = "tst"
+  environment       = "uat"
 }
